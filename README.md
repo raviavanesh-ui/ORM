@@ -23,12 +23,29 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+```
+from django.contrib import admin
+from .models import Car,CarAdmin
+admin.site.register(Car,CarAdmin)
+
+models.py
 
 
+from django.db import models
+from django.contrib import admin
+class Car (models.Model):
+   model=models.CharField(max_length=20)
+   brand=models.CharField(max_length=20)
+   price=models.IntegerField()
+   year=models.IntegerField()
+class CarAdmin(admin.ModelAdmin):
+    list_display=('model','brand','price','year')
+```
 
 ## OUTPUT
 
-Include the screenshot of your admin page.
+![text](<Screenshot (17).png>)
+
 
 
 ## RESULT
